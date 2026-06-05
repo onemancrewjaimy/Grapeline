@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | grapezz.nl</title>
+  <link rel="icon" href="https://grapezz.nl/sites/grapezz/files/logo-fav.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .map-placeholder {
+      background: var(--blue-bg);
+      border-radius: var(--radius);
+      height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 24px;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      border: 1px solid var(--border);
+    }
+    .success-msg {
+      display: none;
+      background: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+      border-radius: var(--radius);
+      padding: 14px 18px;
+      margin-bottom: 20px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+<div class="site-wrapper">
+
+  <header class="site-header">
+    <a href="index.html" class="logo-link">
+      <img src="https://grapezz.nl/sites/grapezz/files/logo.png" alt="GrapezZ logo" class="logo-img" />
+      <div class="brand-text">
+        <span class="brand-name">Grapez<span>Z</span></span>
+        <span class="brand-tagline">Logistiek voor wijnen &amp; oliën</span>
+      </div>
+    </a>
+  </header>
+
+  <nav class="site-nav" aria-label="Hoofdmenu">
+    <ul>
+      <li><a href="index.html">Over GrapezZ</a></li>
+      <li><a href="diensten.html">Diensten</a></li>
+      <li><a href="leveringen.html">Leveringen</a></li>
+      <li><a href="tarieven.html">Tarieven</a></li>
+      <li><a href="referenties.html">Referenties</a></li>
+      <li><a href="impressie.html">Impressie</a></li>
+      <li class="active"><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="site-main">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a> <span>›</span> Contact
+    </div>
+
+    <h1 class="page-title">Contact</h1>
+
+    <div class="contact-grid">
+
+      <!-- Contact info -->
+      <div class="contact-info">
+        <h3>Contactgegevens</h3>
+
+        <div class="contact-detail">
+          <div class="icon">&#9679;</div>
+          <div>
+            <strong>GrapezZ</strong>
+            <p>Onafhankelijke logistieke dienstverlener</p>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <div class="icon">&#9993;</div>
+          <div>
+            <strong>E-mail</strong>
+            <p><a href="mailto:info@grapezz.nl">info@grapezz.nl</a></p>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <div class="icon">&#9742;</div>
+          <div>
+            <strong>Telefoon</strong>
+            <p>Neem telefonisch contact op via e-mail</p>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <div class="icon">&#9679;</div>
+          <div>
+            <strong>Regio</strong>
+            <p>Alkmaar &ndash; Amsterdam &ndash; Haarlem en omstreken</p>
+          </div>
+        </div>
+
+        <div class="map-placeholder">
+          Kaart: regio Alkmaar &ndash; Amsterdam &ndash; Haarlem
+        </div>
+      </div>
+
+      <!-- Contact form -->
+      <div class="contact-form">
+        <h3>Stuur ons een bericht</h3>
+
+        <div class="success-msg" id="success-msg">
+          Bedankt voor uw bericht! Wij nemen zo spoedig mogelijk contact met u op.
+        </div>
+
+        <form id="contact-form" novalidate>
+          <div class="form-group">
+            <label for="naam">Naam <span style="color:#c0392b">*</span></label>
+            <input type="text" id="naam" name="naam" required placeholder="Uw volledige naam" />
+          </div>
+          <div class="form-group">
+            <label for="email">E-mailadres <span style="color:#c0392b">*</span></label>
+            <input type="email" id="email" name="email" required placeholder="uw@email.nl" />
+          </div>
+          <div class="form-group">
+            <label for="onderwerp">Onderwerp</label>
+            <input type="text" id="onderwerp" name="onderwerp" placeholder="Waarover wilt u contact?" />
+          </div>
+          <div class="form-group">
+            <label for="bericht">Bericht <span style="color:#c0392b">*</span></label>
+            <textarea id="bericht" name="bericht" required placeholder="Uw bericht..."></textarea>
+          </div>
+          <button type="submit" class="btn-submit">Verstuur bericht</button>
+        </form>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <span>&copy; 2024 GrapezZ &mdash; Onafhankelijke logistieke dienstverlener</span>
+    <span><a href="mailto:info@grapezz.nl">info@grapezz.nl</a></span>
+  </footer>
+
+</div>
+
+<script>
+  document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var naam = document.getElementById('naam').value.trim();
+    var email = document.getElementById('email').value.trim();
+    var bericht = document.getElementById('bericht').value.trim();
+
+    if (!naam || !email || !bericht) {
+      alert('Vul alle verplichte velden in (naam, e-mail en bericht).');
+      return;
+    }
+
+    document.getElementById('success-msg').style.display = 'block';
+    this.reset();
+    window.scrollTo({ top: document.getElementById('success-msg').offsetTop - 20, behavior: 'smooth' });
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Impressie | grapezz.nl</title>
+  <link rel="icon" href="https://grapezz.nl/sites/grapezz/files/logo-fav.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .lightbox-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.85);
+      z-index: 999;
+      align-items: center;
+      justify-content: center;
+    }
+    .lightbox-overlay.open { display: flex; }
+    .lightbox-overlay img {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: 6px;
+      box-shadow: 0 8px 40px rgba(0,0,0,.5);
+    }
+    .lightbox-close {
+      position: fixed;
+      top: 20px;
+      right: 28px;
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+      line-height: 1;
+      background: none;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+<div class="site-wrapper">
+
+  <header class="site-header">
+    <a href="index.html" class="logo-link">
+      <img src="https://grapezz.nl/sites/grapezz/files/logo.png" alt="GrapezZ logo" class="logo-img" />
+      <div class="brand-text">
+        <span class="brand-name">Grapez<span>Z</span></span>
+        <span class="brand-tagline">Logistiek voor wijnen &amp; oliën</span>
+      </div>
+    </a>
+  </header>
+
+  <nav class="site-nav" aria-label="Hoofdmenu">
+    <ul>
+      <li><a href="index.html">Over GrapezZ</a></li>
+      <li><a href="diensten.html">Diensten</a></li>
+      <li><a href="leveringen.html">Leveringen</a></li>
+      <li><a href="tarieven.html">Tarieven</a></li>
+      <li><a href="referenties.html">Referenties</a></li>
+      <li class="active"><a href="impressie.html">Impressie</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="site-main">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a> <span>›</span> Impressie
+    </div>
+
+    <h1 class="page-title">Impressie</h1>
+
+    <p style="color:var(--text-muted);margin-bottom:24px;">Een kijkje in ons magazijn, ons voertuigenpark en onze werkwijze. Klik op een foto voor een grotere weergave.</p>
+
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="https://grapezz.nl/sites/grapezz/files/pand.jpg"
+             alt="Pand GrapezZ"
+             onclick="openLightbox(this.src)" />
+      </div>
+      <div class="gallery-item">
+        <img src="https://grapezz.nl/sites/grapezz/files/_DSC1126_bewerkt.jpg"
+             alt="Levering GrapezZ"
+             onclick="openLightbox(this.src)" />
+      </div>
+      <div class="gallery-item">
+        <img src="https://grapezz.nl/sites/grapezz/files/_DSC1110_bewerkt_0.jpg"
+             alt="Magazijn GrapezZ"
+             onclick="openLightbox(this.src)" />
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <span>&copy; 2024 GrapezZ &mdash; Onafhankelijke logistieke dienstverlener</span>
+    <span><a href="contact.html">Contact opnemen</a></span>
+  </footer>
+
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox-overlay" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+  <img id="lightbox-img" src="" alt="" onclick="event.stopPropagation()" />
+</div>
+
+<script>
+  function openLightbox(src) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLightbox();
+  });
+</script>
+
+</body>
+</html>
