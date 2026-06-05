@@ -3,57 +3,34 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Impressie | grapezz.nl</title>
+  <title>Impressie — GrapezZ</title>
+  <meta name="description" content="Een kijkje achter de schermen bij GrapezZ — ons magazijn, transport en werkwijze in beeld." />
   <link rel="icon" href="https://grapezz.nl/sites/grapezz/files/logo-fav.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
-  <style>
-    .lightbox-overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,.85);
-      z-index: 999;
-      align-items: center;
-      justify-content: center;
-    }
-    .lightbox-overlay.open { display: flex; }
-    .lightbox-overlay img {
-      max-width: 90vw;
-      max-height: 90vh;
-      border-radius: 6px;
-      box-shadow: 0 8px 40px rgba(0,0,0,.5);
-    }
-    .lightbox-close {
-      position: fixed;
-      top: 20px;
-      right: 28px;
-      color: white;
-      font-size: 2rem;
-      cursor: pointer;
-      line-height: 1;
-      background: none;
-      border: none;
-    }
-  </style>
 </head>
 <body>
 
-<div class="site-wrapper">
-
-  <header class="site-header">
+<header class="site-header">
+  <div class="header-inner">
     <a href="index.html" class="logo-link">
-      <img src="https://grapezz.nl/sites/grapezz/files/logo.png" alt="GrapezZ logo" class="logo-img" />
+      <img src="https://grapezz.nl/sites/grapezz/files/logo.png" alt="GrapezZ" class="logo-img" />
       <div class="brand-text">
-        <span class="brand-name">Grapez<span>Z</span></span>
-        <span class="brand-tagline">Logistiek voor wijnen &amp; oliën</span>
+        <span class="brand-name">Grapez<em>Z</em></span>
+        <span class="brand-tag">Logistiek &amp; Distributie</span>
       </div>
     </a>
-  </header>
+    <div class="header-contact">
+      <a href="mailto:info@grapezz.nl">info@grapezz.nl</a>
+      <a href="contact.html" class="btn-header">Contact opnemen</a>
+    </div>
+  </div>
+</header>
 
-  <nav class="site-nav" aria-label="Hoofdmenu">
+<nav class="site-nav" aria-label="Hoofdmenu">
+  <div class="nav-inner">
     <ul>
       <li><a href="index.html">Over GrapezZ</a></li>
       <li><a href="diensten.html">Diensten</a></li>
@@ -63,63 +40,134 @@
       <li class="active"><a href="impressie.html">Impressie</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
-  </nav>
+  </div>
+</nav>
 
-  <main class="site-main">
+<div class="page-hero" style="background-image: url('https://grapezz.nl/sites/grapezz/files/_DSC1126_bewerkt.jpg')">
+  <div class="container">
     <div class="breadcrumb">
-      <a href="index.html">Home</a> <span>›</span> Impressie
+      <a href="index.html">Home</a>
+      <span class="breadcrumb-sep">›</span>
+      <span>Impressie</span>
+    </div>
+    <h1>Impressie</h1>
+    <p class="hero-sub">Een kijkje achter de schermen — ons pand, magazijn en transport in beeld.</p>
+  </div>
+</div>
+
+<!-- Gallery -->
+<section class="section">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-label">Fotogalerij</span>
+      <h2 class="section-title">Zo ziet GrapezZ eruit</h2>
+      <p class="section-sub">Klik op een foto voor een grotere weergave.</p>
     </div>
 
-    <h1 class="page-title">Impressie</h1>
-
-    <p style="color:var(--text-muted);margin-bottom:24px;">Een kijkje in ons magazijn, ons voertuigenpark en onze werkwijze. Klik op een foto voor een grotere weergave.</p>
-
-    <div class="gallery-grid">
-      <div class="gallery-item">
-        <img src="https://grapezz.nl/sites/grapezz/files/pand.jpg"
-             alt="Pand GrapezZ"
-             onclick="openLightbox(this.src)" />
+    <div class="gallery-grid fade-up" style="transition-delay:.08s">
+      <div class="gallery-item g1" onclick="openLb('https://grapezz.nl/sites/grapezz/files/pand.jpg')">
+        <img src="https://grapezz.nl/sites/grapezz/files/pand.jpg" alt="GrapezZ pand" />
       </div>
-      <div class="gallery-item">
-        <img src="https://grapezz.nl/sites/grapezz/files/_DSC1126_bewerkt.jpg"
-             alt="Levering GrapezZ"
-             onclick="openLightbox(this.src)" />
+      <div class="gallery-item g2" onclick="openLb('https://grapezz.nl/sites/grapezz/files/_DSC1126_bewerkt.jpg')">
+        <img src="https://grapezz.nl/sites/grapezz/files/_DSC1126_bewerkt.jpg" alt="GrapezZ transport" />
       </div>
-      <div class="gallery-item">
-        <img src="https://grapezz.nl/sites/grapezz/files/_DSC1110_bewerkt_0.jpg"
-             alt="Magazijn GrapezZ"
-             onclick="openLightbox(this.src)" />
+      <div class="gallery-item g3" onclick="openLb('https://grapezz.nl/sites/grapezz/files/_DSC1110_bewerkt_0.jpg')">
+        <img src="https://grapezz.nl/sites/grapezz/files/_DSC1110_bewerkt_0.jpg" alt="GrapezZ magazijn" />
+      </div>
+      <div class="gallery-item g4" onclick="openLb('https://grapezz.nl/sites/grapezz/files/_DSC1126_bewerkt.jpg')">
+        <img src="https://grapezz.nl/sites/grapezz/files/_DSC1126_bewerkt.jpg" alt="GrapezZ levering" />
+      </div>
+      <div class="gallery-item g5" onclick="openLb('https://grapezz.nl/sites/grapezz/files/pand.jpg')">
+        <img src="https://grapezz.nl/sites/grapezz/files/pand.jpg" alt="GrapezZ exterieur" />
       </div>
     </div>
-  </main>
+  </div>
+</section>
 
-  <footer class="site-footer">
-    <span>&copy; 2024 GrapezZ &mdash; Onafhankelijke logistieke dienstverlener</span>
-    <span><a href="contact.html">Contact opnemen</a></span>
-  </footer>
+<!-- Over het pand -->
+<section class="section bg-light">
+  <div class="container">
+    <div class="two-col">
+      <div class="col-text fade-up">
+        <span class="section-label">Onze locatie</span>
+        <h2 class="section-title">Eigen magazijn in Noord-Holland</h2>
+        <p>GrapezZ beschikt over een eigen magazijn in de regio. Het magazijn is ingericht voor de professionele opslag van wijnen, oliën en luxury food. Elke opslaglocatie is zorgvuldig gekozen om de kwaliteit van uw producten te waarborgen.</p>
+        <p>Ons eigen wagenpark staat klaar voor de leveringen in de kernregio. De voertuigen zijn ingericht voor het vervoer van kwetsbare glasproducten en worden onderhouden volgens de hoogste standaarden.</p>
+        <ul class="checklist" style="margin-top:16px">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Klimaatbeheerste opslagruimte
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Beveiligd terrein met dagelijks toezicht
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Eigen laden- en loskade
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Ingericht voor pallets, dozen en losse flessen
+          </li>
+        </ul>
+      </div>
+      <div class="col-img fade-up" style="transition-delay:.12s">
+        <img src="https://grapezz.nl/sites/grapezz/files/pand.jpg" alt="GrapezZ pand exterieur" />
+      </div>
+    </div>
+  </div>
+</section>
 
+<div class="cta-banner">
+  <div class="container">
+    <div>
+      <h2>Kom langs of neem contact op</h2>
+      <p>Wilt u meer zien? Neem contact op en plan een kennismakingsgesprek bij ons op locatie.</p>
+    </div>
+    <a href="contact.html" class="btn-cta">Afspraak maken</a>
+  </div>
 </div>
 
 <!-- Lightbox -->
-<div class="lightbox-overlay" id="lightbox" onclick="closeLightbox()">
-  <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
-  <img id="lightbox-img" src="" alt="" onclick="event.stopPropagation()" />
+<div class="lb-overlay" id="lb" onclick="closeLb()">
+  <button class="lb-close" onclick="closeLb()">&times;</button>
+  <img id="lb-img" src="" alt="" onclick="event.stopPropagation()" />
 </div>
 
-<script>
-  function openLightbox(src) {
-    document.getElementById('lightbox-img').src = src;
-    document.getElementById('lightbox').classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-  function closeLightbox() {
-    document.getElementById('lightbox').classList.remove('open');
-    document.body.style.overflow = '';
-  }
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') closeLightbox();
-  });
-</script>
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="brand-name">Grapez<em>Z</em></div>
+      <p>Onafhankelijke logistieke dienstverlener gespecialiseerd in opslag en distributie van wijnen, oliën en luxury food door heel Nederland.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigatie</h4>
+      <ul>
+        <li><a href="index.html">Over GrapezZ</a></li>
+        <li><a href="diensten.html">Diensten</a></li>
+        <li><a href="leveringen.html">Leveringen</a></li>
+        <li><a href="tarieven.html">Tarieven</a></li>
+        <li><a href="referenties.html">Referenties</a></li>
+        <li><a href="impressie.html">Impressie</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:info@grapezz.nl">info@grapezz.nl</a></li>
+        <li><a href="contact.html">Contactformulier</a></li>
+        <li><a href="leveringen.html">Regio &amp; leveringen</a></li>
+        <li><a href="tarieven.html">Tarieven opvragen</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2024 GrapezZ — Alle rechten voorbehouden</span>
+    <span>Logistiek voor wijnen, oliën &amp; luxury food</span>
+  </div>
+</footer>
 
+<script src="js/main.js"></script>
 </body>
 </html>
