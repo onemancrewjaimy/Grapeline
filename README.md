@@ -1,2 +1,0 @@
-# GrapezZ
-Website en branding
