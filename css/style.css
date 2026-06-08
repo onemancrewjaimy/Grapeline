@@ -224,23 +224,18 @@ button {
 .logo {
     display: flex;
     align-items: center;
-    gap: 11px;
     flex-shrink: 0;
     text-decoration: none;
 }
 
-.logo-icon {
-    width: 30px;
-    height: 46px;
+.logo-img {
+    height: 44px;
+    width: auto;
+    display: block;
 }
 
-.logo-text {
-    font-family: var(--font-display);
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--white);
-    letter-spacing: 0.06em;
-    line-height: 1;
+.logo-img--footer {
+    height: 50px;
 }
 
 /* Nav */
@@ -452,7 +447,7 @@ button {
    ============================================ */
 .about-grid {
     display: grid;
-    grid-template-columns: 420px 1fr;
+    grid-template-columns: 1fr 1.3fr;
     gap: 80px;
     align-items: center;
 }
@@ -548,8 +543,8 @@ button {
 }
 
 .service-card:hover {
-    background: rgba(232, 112, 26, 0.07);
-    border-color: rgba(232, 112, 26, 0.35);
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(232, 112, 26, 0.3);
     transform: translateY(-5px);
 }
 
@@ -586,6 +581,7 @@ button {
    ============================================ */
 .stats {
     padding: 72px 0;
+    background: #111111;
 }
 
 .stats-grid {
@@ -716,7 +712,7 @@ button {
 .client-card:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-md);
-    border-color: rgba(232, 112, 26, 0.28);
+    border-color: rgba(44, 26, 14, 0.15);
 }
 
 .client-icon {
@@ -824,7 +820,7 @@ button {
    ============================================ */
 .contact-grid {
     display: grid;
-    grid-template-columns: 380px 1fr;
+    grid-template-columns: 1fr 1.5fr;
     gap: 80px;
     align-items: start;
 }
@@ -842,7 +838,7 @@ button {
 .contact-person-icon {
     width: 56px;
     height: 56px;
-    background: var(--orange-glow);
+    background: #F4EDE4;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -882,7 +878,7 @@ button {
 .contact-item-icon {
     width: 42px;
     height: 42px;
-    background: var(--orange-glow);
+    background: #F4EDE4;
     border-radius: var(--radius-sm);
     display: flex;
     align-items: center;
@@ -1188,7 +1184,7 @@ button {
    ============================================ */
 @media (max-width: 1024px) {
     .about-grid {
-        grid-template-columns: 340px 1fr;
+        grid-template-columns: 1fr 1.2fr;
         gap: 52px;
     }
 
@@ -1211,7 +1207,7 @@ button {
     }
 
     .contact-grid {
-        grid-template-columns: 320px 1fr;
+        grid-template-columns: 1fr 1.4fr;
         gap: 52px;
     }
 }
@@ -1220,7 +1216,10 @@ button {
    RESPONSIVE — MOBILE (≤ 768px)
    ============================================ */
 @media (max-width: 768px) {
-    .section { padding: 72px 0; }
+    .section { padding: 64px 0; }
+
+    /* Header: smaller logo on mobile */
+    .logo-img { height: 36px; }
 
     /* Header: show hamburger */
     .hamburger { display: flex; }
@@ -1241,19 +1240,23 @@ button {
 
     .nav-list {
         flex-direction: column;
-        gap: 6px;
+        gap: 4px;
         text-align: center;
+        padding: 20px;
+        width: 100%;
     }
 
     .nav-link {
-        font-size: 1.5rem;
-        padding: 12px 28px;
+        font-size: 1.35rem;
+        padding: 14px 28px;
+        display: block;
     }
 
     .nav-link--cta {
-        font-size: 1.3rem;
-        padding: 12px 36px;
-        margin-top: 8px;
+        font-size: 1.2rem;
+        padding: 14px 36px;
+        margin-top: 12px;
+        display: inline-flex;
     }
 
     /* Hero */
@@ -1270,7 +1273,7 @@ button {
     .about-visual { display: none; }
 
     /* Services */
-    .services-grid { grid-template-columns: 1fr; }
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
 
     /* Stats */
     .stats-grid {
@@ -1304,16 +1307,27 @@ button {
    RESPONSIVE — SMALL MOBILE (≤ 480px)
    ============================================ */
 @media (max-width: 480px) {
-    .container { padding: 0 20px; }
+    .container { padding: 0 18px; }
 
-    .stats-grid { grid-template-columns: 1fr; }
+    .logo-img { height: 32px; }
 
-    .stat-number { font-size: 2.6rem; }
+    .services-grid { grid-template-columns: 1fr; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
 
-    .hero-title { font-size: 2.4rem; }
+    .stat-number { font-size: 2.4rem; }
 
-    .section-title { font-size: 1.9rem; }
+    .hero-title { font-size: 2.2rem; }
+    .hero-subtitle { font-size: 0.97rem; }
+
+    .section-title { font-size: 1.8rem; }
+    .section-header { margin-bottom: 48px; }
+
+    .hero-actions .btn { width: 100%; justify-content: center; }
 
     .client-card,
-    .service-card { padding: 30px 22px; }
+    .service-card { padding: 28px 20px; }
+
+    .process-step { padding: 0; }
+
+    .contact-person { flex-direction: column; text-align: center; }
 }
